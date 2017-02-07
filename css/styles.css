@@ -1,0 +1,41 @@
+body {
+  background-color: #657666; }
+  body nav {
+    padding: 15px;
+    border-bottom: 2px solid #355737;
+    background-color: white; }
+    body nav button {
+      margin: 0 5px;
+      border-style: dashed;
+      background-color: white;
+      padding: 5px 9px; }
+    body nav h1 {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      display: inline;
+      margin: 0; }
+  body #noteForm input {
+    display: inline-block;
+    margin: 5px;
+    padding: 2px;
+    height: 22px;
+    border: 3px solid #355737;
+    min-width: 250px; }
+    body #noteForm input.label {
+      border: none;
+      background-color: #657666;
+      color: white;
+      padding: 0;
+      margin: 0 0 0 20px; }
+  body #noteForm button {
+    display: inline;
+    border-radius: 3px;
+    border-style: none;
+    width: 32px;
+    height: 32px;
+    border: 3px solid #355737;
+    background-color: #4a5f3c;
+    color: white; }
+
+/*# sourceMappingURL=styles.css.map */
