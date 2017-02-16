@@ -1,10 +1,19 @@
 body{
     background-color:#657666;
-
+    
     nav{
         padding:15px;
         border-bottom: 2px solid #355737;
         background-color:white;
+        #navCategory{
+            display:inline-block;
+            margin: 0 20px;
+            select{
+                display:block;
+                margin:4px auto;
+                min-width: 100px;
+            }
+        }
 
         button{
             margin: 0 5px;
@@ -22,6 +31,18 @@ body{
         }
     }
     #noteForm{
+        h3{
+            color:white;
+            display:inline-block;
+            min-width:100px;
+            line-height:32px;
+            margin:5px 0;
+
+            &:hover > .btnDeleteCat{
+                display:inline-block;
+                margin-left:10px;
+            }
+        }
         input{
             display:inline-block;
             margin: 5px;
@@ -47,6 +68,45 @@ body{
             border:3px solid #355737;
             background-color:#4a5f3c;
             color:white;
+            margin-left:5px;
+            
+            &.btnDeleteCat{
+                display:none;
+                margin-left:10px;
+            }
+            
+            
+        }
+    }
+
+    .modal{
+        display:none;
+        width: 400px;
+        height: 300px;
+        border: 1px solid white;
+        position: fixed;
+        left: 35%;
+        top: 25%;
+        color:white;
+        background-color:#657666;
+        
+        h1,p{
+            text-align: center;
+        }
+        button{
+            display:block;
+            margin:0 auto;
+            margin-top:10px;
+        }  
+        &#modalNewCategory{
+            #formNewCategory{
+                width: 300px;
+                margin:0 auto;
+                text-align: center;
+            }
+        }
+        &#modalMessage{
+            z-index:10;
         }
     }
 }

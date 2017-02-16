@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Note Taking</title>
+        <title>Copy &amp; Paste</title>
         <link rel="stylesheet" href="css/normalize.css" />
         <link rel="stylesheet" href="css/font-awesome.min.css" />
         <link rel="stylesheet" href="css/styles.css" />
@@ -9,16 +9,40 @@
     <body>
         <nav>
             <button id="btnNew"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            <div id="navCategory">
+                <label for="activeCategory">Active Category</label>
+                <select id="activeCategory"></select>
+            </div>
+            
+            <button id="btnNewCategory"><i class="fa fa-plus" aria-hidden="true"></i></button>
             <button id="btnSave"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
 
-            <h1>Note Taking</h1>
+            <h1>Copy &amp; Paste</h1>
         </nav>
         <form action="" id="noteForm">
             
         </form>
 
+
+        <!-- Modals -->
+        <div class="modal" id="modalNewCategory">
+            <h1>New Category</h1>
+            <div id="formNewCategory">
+                <input type="text" />
+            </div>
+            <button class="confirmBtn">OK</button>
+            <button class="closeBtn">Close</button>
+        </div>
+
+        <div class="modal" id="modalMessage">
+            <h1></h1>
+            <p></p>
+            <button class="closeBtn">Close</button>
+        </div>
+
         <script src="js/jquery-3.1.1.min.js"></script>
         <script src="js/clipboard.min.js"></script>
+        <script src="js/store.min.js"></script>
         <script src="js/custom.js"></script>
 
     </body>
