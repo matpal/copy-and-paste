@@ -221,7 +221,6 @@ function loadCategoriesContainers(categories){
 
         $form.append(myDiv);
 
-        loadNotes();
     }
 }
 
