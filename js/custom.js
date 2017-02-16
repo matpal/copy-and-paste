@@ -1,80 +1,6 @@
-// var inputIdName = "input";
-// var btnIdName = "button";
-// var lblIdName = "label";
-// var $form;
-
 var categoryCounter = 0;
 var notesCounter = 0;
 
-
-/*
-================
-    Models
-================
-*/
-
-/*    Note    */
-
-function Note () {
-    
-    this.id = "";
-    this.category = "";
-    this.note = {
-        label:"",
-        value:""
-    };
-}
-
-/*  Categories */
-function Category () {
-    this.name = "";
-}
-
-
-// function loadInputs(){
-// -    var inputId;
-// -    var btnId;
-// -    var lblId;
-// -    var noteInput;
-// -    var noteCopy;
-// -
-// -    for(i = 0; i < localStorage.length; i=i+1){
-// -        inputId = inputIdName + i;
-// -        btnId = btnIdName + i;
-// -        lblId = lblIdName + i;
-// -
-// -        localInputValue = localStorage.getItem(inputId);
-// -        localLabelValue = localStorage.getItem(lblId);
-// -
-// -        if(localInputValue){
-// -            noteLabel = '<input class="label" type="text" id="'+lblId+'" name="'+lblId+'" value="'+localLabelValue+'"/>';
-// -            noteInput = '<input type="text" id="'+inputId+'" name="'+inputId+'" value="'+localInputValue+'"/>';
-// -            noteCopy = '<button id="'+btnId+'" data-clipboard-target="#'+inputId+'"><i class="fa fa-files-o" aria-hidden="true"></i></button>';
-// -
-// -            $form.append(noteLabel);
-// -            $form.append(noteInput);
-// -            $form.append(noteCopy);
-// -            $form.append("<br />");
-// -        }
-// -    }
-
-function loadNotes(){
-    
-}
-
-/*
-    Updates the total count of notes
-*/
-// function updateTotalCount(store){
-//     if(store){
-//         var c = store.get("counter");
-//         if(c){
-//             store.set("counter", c+1);    
-//         }else{
-//             store.set("counter", 1);    
-//         }
-//     }
-// }
 function btnDeleteNote(e){
     $(e).parent().children("input").each(function(){
         store.remove($(this).attr("id"));
@@ -96,7 +22,6 @@ function saveInputs(){
             var note = $(this).children("input")[1].value;
             var noteId = $(this).children("input")[1].id;
             var noteCat = $($(this).children("input")[1]).data("category");
-
             
             // save label
             store.set(lblId, {"id":lblId, "value":lbl, "category": lblCat});
@@ -156,9 +81,7 @@ function bindEvents(){
             showMessage("Warning","Category not found.");
         }
 
-
     });
-
 
     $('#btnNewCategory').click(function(){
         $('#modalNewCategory').fadeIn("slow");
@@ -176,7 +99,6 @@ function bindEvents(){
         }else{
             showMessage("Warning", "Please insert a new Category.");
         }
-        
         
     });
 
@@ -205,7 +127,6 @@ function bindEvents(){
         $(this).parent().remove();
     });
 }
-
 
 /*
     Check local storage
@@ -269,8 +190,6 @@ function loadCategoriesContainers(categories){
                             var input1 = document.createElement("input");
                             // note value
                             var input2 = document.createElement("input");
-                            
-                            
 
                             $(input1).attr("id",value.id);
                             $(input1).attr("name",value.id);
@@ -281,7 +200,6 @@ function loadCategoriesContainers(categories){
                             $(input2).attr("name",noteValue.id);
                             $(input2).attr("data-category",value.category);
                             $(input2).val(noteValue.value);
-                           
 
                             // button copy
                             var btnCopy = '<button id="btn'+noteId+'" data-clipboard-target="#'+noteValue.id+'"><i class="fa fa-files-o" aria-hidden="true"></i></button>';
@@ -296,8 +214,6 @@ function loadCategoriesContainers(categories){
                             $(myDiv).append(div);
 
                         }
-                        
-
                     }
                 }
             }
@@ -329,9 +245,6 @@ $(document).ready(function(){
     new Clipboard('button');
     $form= $('#noteForm');
     
-
-    
-
     checkLocalStorage();
     init();
     var categories = readCategories();
